@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lenten_companion/screens/home/index.dart';
 import 'package:lenten_companion/screens/about/index.dart';
-import 'package:lenten_companion/screens/welcome/index.dart';
+import 'package:lenten_companion/screens/meditation/index.dart';
+import 'package:lenten_companion/screens/stationsOfTheCross/index.dart';
 import 'package:lenten_companion/source/colors.dart';
 
 class App extends StatefulWidget {
@@ -12,44 +13,48 @@ class App extends StatefulWidget {
 }
 
 class _MainAppState extends State<App> {
-  List screens = [
-    Home(),
-    About(),
-  ];
-
-  int currentIndex = 0;
+  int currentIndex = 1;
 
   List notifications = [];
 
-  void onTap(int index) {
+  // final  Map<String, Object>rcvdData = ModalRoute.of(context).settings.arguments;
+  // print("rcvd fdata ${rcvdData['name']}");
+  // print("rcvd fdata ${rcvdData}");
+
+  void navigateToScreen(int index) {
     setState(() {
       currentIndex = index;
     });
   }
 
+// 0 === others
+// 1 === Home
+// 2 === About
+// 0 === Meditation
+
+  // List screens = [
+  //   Home,
+  //   About,
+  //   About,
+  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: const Text('AppBar Demo'),
         backgroundColor: AppColor.color3.withOpacity(.8),
-        title: Text(
-          "My Lenten Companinon",
-          style: TextStyle(
-            fontSize: 25,
-          ),
-        ),
-
+        title: Text("My Lenten Companinon", style: TextStyle(fontSize: 25)),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.notifications),
             tooltip: 'Show Snackbar',
             onPressed: () {
-              if (notifications.isNotEmpty) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const About()),
-                );
+              if (!notifications.isNotEmpty) {
+                navigateToScreen(1);
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const About()),
+                // );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('No new Notification')));
@@ -60,12 +65,14 @@ class _MainAppState extends State<App> {
       ),
       body: Container(
         padding: const EdgeInsets.all(5),
-        child: screens[currentIndex],
+        // child:   screens[currentIndex](navigateToScreen) ,
+        child:
+            MainBody(screen: currentIndex, navigateToScreen: navigateToScreen),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTap,
+        onTap: navigateToScreen,
         elevation: 0,
-        currentIndex: currentIndex,
+        currentIndex: currentIndex != 1 && currentIndex != 2 ? 0 : currentIndex,
         showSelectedLabels: false,
         backgroundColor: AppColor.color3,
         showUnselectedLabels: false,
@@ -73,15 +80,50 @@ class _MainAppState extends State<App> {
         unselectedItemColor: AppColor.color1,
         items: [
           BottomNavigationBarItem(
-            title: Text("Home"),
+            label: "Other",
+            icon: Icon(Icons.radar),
+          ),
+          BottomNavigationBarItem(
+            label: "Home",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title: Text("About"),
+            label: "About",
             icon: Icon(Icons.info_sharp),
           ),
         ],
       ),
     );
+  }
+}
+
+class MainBody extends StatelessWidget {
+  // In the constructor, require a Todo.
+  const MainBody(
+      {Key? key, required this.screen, required this.navigateToScreen})
+      : super(key: key);
+
+  // Declare a field that holds the Todo.
+  final int screen;
+  final Function navigateToScreen;
+
+  // const MainBody({Key? key, this.screen, this.navigateToScreen})
+  //     : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // return screen == "home" ? Home(navigateToScreen) : About();
+    return screen == 1
+        ? Home(navigateToScreen: navigateToScreen)
+        : screen == 2
+            ? About()
+            : screen == 3
+                ? Meditation()
+                : screen == 4
+                    ? StationsOfTheCross()
+                    : Home(navigateToScreen: navigateToScreen);
+
+    // navigateToScreen
+//         child: Home(navigateToScreen),
   }
 }

@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import '../../source/colors.dart' as color;
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  // final navigateToScreen;
+
+  // // // Requiring the list of todos.
+  const Home({Key? key, required this.navigateToScreen}) : super(key: key);
+
+  final navigateToScreen;
+  // Home(this.navigateToScreen);
 
 // List quotes = [
 //   { quote: "dsfasdfsd",author:"sdafdsa"}
@@ -22,85 +28,90 @@ class Home extends StatelessWidget {
               ),
               child: Column(
                 children: <Widget>[
-                  Container(
-                    width: double.maxFinite,
-                    height: 235,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        color.AppColor.color3,
-                        color.AppColor.color2,
-                      ]),
-                      // color: color.AppColor.pryBg,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(50),
-                        bottomLeft: Radius.circular(5),
-                        bottomRight: Radius.circular(5),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(1, 10),
-                            blurRadius: 10,
-                            color: color.AppColor.color3.withOpacity(0.3)),
-                      ],
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      navigateToScreen(4);
+                    }, // Handle your callback
                     child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 10, top: 20, right: 20, bottom: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "My Catholic Journey",
-                            style: TextStyle(
-                                fontSize: 16, color: color.AppColor.color1),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Stations of the Cross According to the Method of Saint Francis of Assisi:",
-                            style: TextStyle(
-                                fontSize: 25, color: color.AppColor.color1),
-                          ),
-                          SizedBox(height: 25),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.timer,
-                                    size: 20,
-                                    color: color.AppColor.color1,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text(
-                                    "30 mins",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: color.AppColor.color1),
-                                  ),
-                                ],
-                              ),
-                              // SizedBox(width: (double.maxFinite - 40)),
-                              Expanded(child: Container()),
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(60),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: color.AppColor.color3,
-                                          blurRadius: 10,
-                                          offset: Offset(4, 8))
-                                    ]),
-                                child: Icon(
-                                  Icons.play_circle_fill,
-                                  color: color.AppColor.color4,
-                                  size: 60,
-                                ),
-                              )
-                            ],
-                          )
+                      width: double.maxFinite,
+                      height: 235,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          color.AppColor.color3,
+                          color.AppColor.color2,
+                        ]),
+                        // color: color.AppColor.pryBg,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(50),
+                          bottomLeft: Radius.circular(5),
+                          bottomRight: Radius.circular(5),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(1, 10),
+                              blurRadius: 10,
+                              color: color.AppColor.color3.withOpacity(0.3)),
                         ],
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.only(
+                            left: 10, top: 20, right: 20, bottom: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "My Catholic Journey",
+                              style: TextStyle(
+                                  fontSize: 16, color: color.AppColor.color1),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Stations of the Cross According to the Method of Saint Francis of Assisi:",
+                              style: TextStyle(
+                                  fontSize: 25, color: color.AppColor.color1),
+                            ),
+                            SizedBox(height: 25),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.timer,
+                                      size: 20,
+                                      color: color.AppColor.color1,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      "30 mins",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: color.AppColor.color1),
+                                    ),
+                                  ],
+                                ),
+                                // SizedBox(width: (double.maxFinite - 40)),
+                                Expanded(child: Container()),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(60),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: color.AppColor.color3,
+                                            blurRadius: 10,
+                                            offset: Offset(4, 8))
+                                      ]),
+                                  child: Icon(
+                                    Icons.play_circle_fill,
+                                    color: color.AppColor.color4,
+                                    size: 60,
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -145,7 +156,7 @@ class Home extends StatelessWidget {
                           height: 160,
                           width: double.maxFinite,
                           margin: const EdgeInsets.only(
-                              left: 120, top: 35, right: 10),
+                              left: 120, top: 50, right: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -161,50 +172,65 @@ Worry is useless. God is merciful and will hear your prayers
                               SizedBox(
                                 height: 10,
                               ),
-                              Text(
-                                "St. Padre Pio",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: color.AppColor.color1),
-                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    "St. Padre Pio",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                        color: color.AppColor.color4),
+                                  ),
+                                ],
+                              )
                             ],
                           ),
                         )
                       ],
                     ),
                   ),
-                  Container(
-                    transform: Matrix4.translationValues(0.0, -45.0, 0.0),
-                    width: double.maxFinite,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        color.AppColor.color3,
-                        color.AppColor.color2,
-                      ]),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(1, 10),
-                            blurRadius: 10,
-                            color: color.AppColor.color3.withOpacity(0.3)),
-                      ],
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => About()),
+                      // );
+                      navigateToScreen(3);
+                    }, // Handle your callback
+
                     child: Container(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Daily Meditation",
-                            style: TextStyle(
-                                fontSize: 25, color: color.AppColor.color1),
-                          ),
+                      transform: Matrix4.translationValues(0.0, -45.0, 0.0),
+                      width: double.maxFinite,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          color.AppColor.color3,
+                          color.AppColor.color2,
+                        ]),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(1, 10),
+                              blurRadius: 10,
+                              color: color.AppColor.color3.withOpacity(0.3)),
                         ],
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Daily Meditation",
+                              style: TextStyle(
+                                  fontSize: 25, color: color.AppColor.color1),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:lenten_companion/source/colors.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
