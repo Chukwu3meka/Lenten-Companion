@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lenten_companion/screens/home/index.dart';
-import 'package:lenten_companion/screens/profile/profile.dart';
+import 'package:lenten_companion/screens/about/index.dart';
 import 'package:lenten_companion/screens/welcome/index.dart';
+import 'package:lenten_companion/source/colors.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class App extends StatefulWidget {
 class _MainAppState extends State<App> {
   List screens = [
     Home(),
-    Profile(),
+    About(),
   ];
 
   int currentIndex = 0;
@@ -31,6 +32,7 @@ class _MainAppState extends State<App> {
     return Scaffold(
       appBar: AppBar(
         // title: const Text('AppBar Demo'),
+        backgroundColor: AppColor.color3.withOpacity(.8),
         title: Text(
           "My Lenten Companinon",
           style: TextStyle(
@@ -46,7 +48,7 @@ class _MainAppState extends State<App> {
               if (notifications.isNotEmpty) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Profile()),
+                  MaterialPageRoute(builder: (context) => const About()),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -62,11 +64,19 @@ class _MainAppState extends State<App> {
         elevation: 0,
         currentIndex: currentIndex,
         showSelectedLabels: false,
+        backgroundColor: AppColor.color3,
         showUnselectedLabels: false,
+        selectedItemColor: AppColor.color4,
+        unselectedItemColor: AppColor.color1,
         items: [
-          BottomNavigationBarItem(title: Text("Home"), icon: Icon(Icons.home)),
           BottomNavigationBarItem(
-              title: Text("Profile"), icon: Icon(Icons.person)),
+            title: Text("Home"),
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            title: Text("About"),
+            icon: Icon(Icons.info_sharp),
+          ),
         ],
       ),
     );

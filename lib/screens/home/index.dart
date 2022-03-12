@@ -27,8 +27,8 @@ class Home extends StatelessWidget {
               height: 235,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-                  color.AppColor.backgroundThree,
-                  color.AppColor.backgroundTwo,
+                  color.AppColor.color3,
+                  color.AppColor.color2,
                 ]),
                 // color: color.AppColor.pryBg,
                 borderRadius: BorderRadius.only(
@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
                   BoxShadow(
                       offset: Offset(1, 10),
                       blurRadius: 10,
-                      color: color.AppColor.backgroundThree.withOpacity(0.3)),
+                      color: color.AppColor.color3.withOpacity(0.3)),
                 ],
               ),
               child: Container(
@@ -52,14 +52,14 @@ class Home extends StatelessWidget {
                   children: [
                     Text(
                       "My Catholic Journey",
-                      style: TextStyle(
-                          fontSize: 16, color: color.AppColor.textOne),
+                      style:
+                          TextStyle(fontSize: 16, color: color.AppColor.color1),
                     ),
                     SizedBox(height: 10),
                     Text(
                       "Stations of the Cross According to the Method of Saint Francis of Assisi:",
-                      style: TextStyle(
-                          fontSize: 25, color: color.AppColor.textOne),
+                      style:
+                          TextStyle(fontSize: 25, color: color.AppColor.color1),
                     ),
                     SizedBox(height: 25),
                     Row(
@@ -70,13 +70,13 @@ class Home extends StatelessWidget {
                             Icon(
                               Icons.timer,
                               size: 20,
-                              color: color.AppColor.textOne,
+                              color: color.AppColor.color1,
                             ),
                             SizedBox(width: 5),
                             Text(
                               "30 mins",
                               style: TextStyle(
-                                  fontSize: 15, color: color.AppColor.textOne),
+                                  fontSize: 15, color: color.AppColor.color1),
                             ),
                           ],
                         ),
@@ -87,13 +87,13 @@ class Home extends StatelessWidget {
                               borderRadius: BorderRadius.circular(60),
                               boxShadow: [
                                 BoxShadow(
-                                    color: color.AppColor.backgroundThree,
+                                    color: color.AppColor.color3,
                                     blurRadius: 10,
                                     offset: Offset(4, 8))
                               ]),
                           child: Icon(
                             Icons.play_circle_fill,
-                            color: color.AppColor.iconOne,
+                            color: color.AppColor.color4,
                             size: 60,
                           ),
                         )
@@ -121,8 +121,7 @@ class Home extends StatelessWidget {
                         BoxShadow(
                             blurRadius: 40,
                             offset: Offset(2, 2),
-                            color:
-                                color.AppColor.backgroundThree.withOpacity(.3))
+                            color: color.AppColor.color3.withOpacity(.3))
                       ],
                     ),
                   ),
@@ -155,7 +154,7 @@ Worry is useless. God is merciful and will hear your prayers
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: color.AppColor.textOne),
+                              color: color.AppColor.color1),
                         ),
                         SizedBox(
                           height: 10,
@@ -165,7 +164,7 @@ Worry is useless. God is merciful and will hear your prayers
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
-                              color: color.AppColor.textOne),
+                              color: color.AppColor.color1),
                         ),
                       ],
                     ),

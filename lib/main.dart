@@ -17,9 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Lenten Companion',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.purple,
-        ),
         home: App());
   }
 }
