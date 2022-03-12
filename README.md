@@ -1,4 +1,4 @@
-# flutter_application_1
+# lenten_companion
 
 A new Flutter project.
 

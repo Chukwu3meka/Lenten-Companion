@@ -1,0 +1,181 @@
+import 'package:flutter/material.dart';
+import '../../source/colors.dart' as color;
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+// List quotes = [
+//   { quote: "dsfasdfsd",author:"sdafdsa"}
+// ]
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.only(
+          // top: 70,
+          left: 5,
+          right: 5,
+          bottom: 30,
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 10),
+            Container(
+              width: double.maxFinite,
+              height: 235,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  color.AppColor.backgroundThree,
+                  color.AppColor.backgroundTwo,
+                ]),
+                // color: color.AppColor.pryBg,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(5),
+                  bottomRight: Radius.circular(5),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(1, 10),
+                      blurRadius: 10,
+                      color: color.AppColor.backgroundThree.withOpacity(0.3)),
+                ],
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 10, top: 20, right: 20, bottom: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "My Catholic Journey",
+                      style: TextStyle(
+                          fontSize: 16, color: color.AppColor.textOne),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Stations of the Cross According to the Method of Saint Francis of Assisi:",
+                      style: TextStyle(
+                          fontSize: 25, color: color.AppColor.textOne),
+                    ),
+                    SizedBox(height: 25),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.timer,
+                              size: 20,
+                              color: color.AppColor.textOne,
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "30 mins",
+                              style: TextStyle(
+                                  fontSize: 15, color: color.AppColor.textOne),
+                            ),
+                          ],
+                        ),
+                        // SizedBox(width: (double.maxFinite - 40)),
+                        Expanded(child: Container()),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(60),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: color.AppColor.backgroundThree,
+                                    blurRadius: 10,
+                                    offset: Offset(4, 8))
+                              ]),
+                          child: Icon(
+                            Icons.play_circle_fill,
+                            color: color.AppColor.iconOne,
+                            size: 60,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: 280,
+              width: double.maxFinite,
+              child: Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 30),
+                    width: double.maxFinite,
+                    height: 170,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: AssetImage("img/resolutionBackground.jpg"),
+                          fit: BoxFit.fill),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 40,
+                            offset: Offset(2, 2),
+                            color:
+                                color.AppColor.backgroundThree.withOpacity(.3))
+                      ],
+                    ),
+                  ),
+                  // Center(
+                  //   child:
+                  Container(
+                    height: double.maxFinite,
+                    width: 130,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: AssetImage("img/crucifix.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  // ),
+                  Container(
+                    height: 160,
+                    width: double.maxFinite,
+                    margin:
+                        const EdgeInsets.only(left: 120, top: 35, right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '''Pray, Hope and Don't Worry.
+Worry is useless. God is merciful and will hear your prayers
+''',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: color.AppColor.textOne),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "St. Padre Pio",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: color.AppColor.textOne),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

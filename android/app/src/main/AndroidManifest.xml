@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_application_1">
+    package="com.example.lenten_companion">
    <application
-        android:label="flutter_application_1"
+        android:label="lenten_companion"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
