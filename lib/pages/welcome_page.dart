@@ -29,7 +29,7 @@ class _WelcomeState extends State<Welcome> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                            "img/" + images[index],
+                            "assets/img/" + images[index],
                           ),
                           fit: BoxFit.fitWidth),
                     ),

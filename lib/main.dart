@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
                   Icon(Icons.health_and_safety_rounded)
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 10),
               Container(
                 width: double.maxFinite,
                 height: 235,
