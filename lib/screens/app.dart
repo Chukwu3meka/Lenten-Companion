@@ -58,7 +58,10 @@ class _MainAppState extends State<App> {
           ),
         ],
       ),
-      body: screens[currentIndex],
+      body: Container(
+        padding: const EdgeInsets.all(5),
+        child: screens[currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTap,
         elevation: 0,
