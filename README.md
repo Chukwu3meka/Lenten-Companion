@@ -23,3 +23,7 @@ git rm --cached <file>
 If you want to remove a whole folder, you need to remove all files in it recursively.
 
 git rm -r --cached <folder> -->
+
+<!--  -->
+<!-- $ flutter clean && flutter pub get && flutter pub run flutter_launcher_icons:main  -->
+<!-- $ dart  pub global run rename --appname "Lent" -->

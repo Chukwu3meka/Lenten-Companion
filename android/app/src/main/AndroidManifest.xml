@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lenten_companion">
    <application
-        android:label="lenten_companion"
+        android:label="Lent"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

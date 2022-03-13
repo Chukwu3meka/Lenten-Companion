@@ -74,6 +74,14 @@ class About extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    TextSpan(
+                      text:
+                          '\n\u2022Fasting has to do with one\'s personal conviction, for instance if you usually eat have your first meal by 10am, you can make it 1pm during this period lent. Mind you, The Church does not consider Sunday as part of lent, which would have been 47 days.',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
               ),
