@@ -13,7 +13,7 @@ class App extends StatefulWidget {
 }
 
 class _MainAppState extends State<App> {
-  int currentIndex = 1;
+  int currentIndex = 4;
 
   List notifications = [];
 

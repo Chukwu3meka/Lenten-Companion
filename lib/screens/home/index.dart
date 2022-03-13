@@ -2,19 +2,10 @@ import 'package:flutter/material.dart';
 import '../../source/colors.dart' as color;
 
 class Home extends StatelessWidget {
-  // final navigateToScreen;
-
-  // // // Requiring the list of todos.
   const Home({Key? key, required this.navigateToScreen}) : super(key: key);
 
   final navigateToScreen;
-  // Home(this.navigateToScreen);
 
-// List quotes = [
-//   { quote: "dsfasdfsd",author:"sdafdsa"}
-// ]
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
@@ -67,7 +58,7 @@ class Home extends StatelessWidget {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              "Stations of the Cross According to the Method of Saint Francis of Assisi:",
+                              "Stations of the Cross According to the Method of Saint Alphonsus Liguori:",
                               style: TextStyle(
                                   fontSize: 25, color: color.AppColor.color1),
                             ),
